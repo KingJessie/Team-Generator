@@ -12,6 +12,7 @@ const render = require("./src/page-template.js");
 
 const team = [];
 
+// Function to verify that the user has input 11 digits.
 function checkNumber(input) {
   if (/^\d{11}$/.test(input)) {
     return true;
