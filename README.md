@@ -52,6 +52,10 @@ npm run test
 
 ![screenshot](images/test.gif)
 
+## 🔀 ***Deployment:*** 
+Live Link: https://kingjessie.github.io/Team-Generator/
+
+
 ## 🧑‍🏫 **What I Learnt:**
 - [x] Identify and implement prototypal inheritance in JavaScript.
 - [x] Create constructor functions to instantiate multiple objects of similar type.
