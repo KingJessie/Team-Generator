@@ -12,7 +12,7 @@ const render = require("./src/page-template.js");
 
 const team = [];
 
-// Function to verify that the user has input 11 digits.
+// Function to verify that the user has input 11 digits for office number.
 function checkNumber(input) {
   if (/^\d{11}$/.test(input)) {
     return true;
@@ -21,6 +21,7 @@ function checkNumber(input) {
   }
 }
 
+// Function to check user has entered correct email format.
 function checkEmail(input) {
   if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input)) {
     return true;
@@ -29,6 +30,7 @@ function checkEmail(input) {
   }
 }
 
+// Function to verify that the user has input 5 digits for ID.
 function checkPin(input) {
   if (/^\d{5}$/.test(input)) {
     return true;
@@ -156,6 +158,7 @@ async function createIntern() {
     await createTeam();
   }
   
+//  This function prompts the user to select the next team member to add to the team, and based on the user's choice, it calls other functions to create an Engineer or an Intern, or to generate an HTML file to build the team.
   async function createTeam() {
     const { choice } = await inquirer.prompt([
       {
@@ -181,10 +184,12 @@ async function createIntern() {
     }
   }
   
+//  This function generates an HTML file by using fs to write HTML code to the  given outputPath (folder).
+
   async function generateHTML() {
     const html = render(team);
     await fs.promises.writeFile(outputPath, html);
-    console.log(`File successfully generated at ${outputPath}`);
+    console.log(`File successfully generated.`);
   }
   
   
